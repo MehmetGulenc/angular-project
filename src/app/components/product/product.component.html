@@ -1,8 +1,9 @@
 <table class="table">
   <tr *ngFor="let product of products">
-    <td>{{ product.productId }}</td>
-    <td>{{ product.productName }}</td>
+    <td>{{ product.id }}</td>
     <td>{{ product.categoryId }}</td>
-    <td>{{ product.unitPrice }}</td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.addedAt }}</td>
+    <td>{{ product.isActive }}</td>
   </tr>
 </table>
