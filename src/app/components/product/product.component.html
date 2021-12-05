@@ -1,9 +1,27 @@
-<table class="table">
-  <tr *ngFor="let product of products">
-    <td>{{ product.id }}</td>
-    <td>{{ product.categoryId }}</td>
-    <td>{{ product.name }}</td>
-    <td>{{ product.addedAt }}</td>
-    <td>{{ product.isActive }}</td>
-  </tr>
+<div class="d-flex justify-content-center">
+  <div
+    *ngIf="dataLoaded == false"
+    class="spinner-border text-danger"
+    role="status"
+  >
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<table *ngIf="dataLoaded == true" class="table table-striped">
+  <thead>
+    <th scope="col">Id</th>
+    <th scope="col">Kategori Id</th>
+    <th scope="col">Ürün Adı</th>
+    <th scope="col">Eklenme Tarihi</th>
+    <th scope="col">Aktif mi ?</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <th scope="row">{{ product.id }}</th>
+      <td>{{ product.categoryId }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.addedAt }}</td>
+      <td>{{ product.isActive }}</td>
+    </tr>
+  </tbody>
 </table>
